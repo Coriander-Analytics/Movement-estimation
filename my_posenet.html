@@ -27,7 +27,7 @@
         poseNet.on('pose', gotPoses);
       }
       function gotPoses(poses) {
-        console.log(poses);
+        console.log(JSON.stringify(poses));
       }
 
       function modelReady() {
