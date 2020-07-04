@@ -15,19 +15,78 @@
     <script>
       // Your code will go here
       // open up your console - if everything loaded properly you should see 0.9.0
-      console.log('ml5 version:', ml5.version);
       let video;
       let poseNet;
+      let leftHandX = 200;
+      let leftHandY = 200;
 
       function setup() {
-        createCanvas(400, 400);
+        createCanvas(800, 800);
         video = createCapture(VIDEO);
         video.hide();
         poseNet = ml5.poseNet(video, modelReady);
         poseNet.on('pose', gotPoses);
       }
       function gotPoses(poses) {
-        console.log(poses);
+      //console.log(poses);
+        leftHandX = poses[0].pose.keypoints[9].position.x
+        leftHandY = poses[0].pose.keypoints[9].position.y
+        
+        
+        console.log("0.x: ", poses[0].pose.keypoints[0].position.x)
+        console.log("0.y: ", poses[0].pose.keypoints[0].position.y)
+        
+        console.log("1.x: ", poses[0].pose.keypoints[1].position.x)
+        console.log("1.y: ", poses[0].pose.keypoints[1].position.y)
+        
+        console.log("2.x: ", poses[0].pose.keypoints[2].position.x)
+        console.log("2.y: ", poses[0].pose.keypoints[2].position.y)
+        
+        console.log("3.x: ", poses[0].pose.keypoints[3].position.x)
+        console.log("3.y: ", poses[0].pose.keypoints[3].position.y)
+        
+        console.log("4.x: ", poses[0].pose.keypoints[4].position.x)
+        console.log("4.y: ", poses[0].pose.keypoints[4].position.y)
+        
+        console.log("5.x: ", poses[0].pose.keypoints[5].position.x)
+        console.log("5.y: ", poses[0].pose.keypoints[5].position.y)
+        
+        console.log("6.x: ", poses[0].pose.keypoints[6].position.x)
+        console.log("6.y: ", poses[0].pose.keypoints[6].position.y)
+        
+        console.log("7.x: ", poses[0].pose.keypoints[7].position.x)
+        console.log("7.y: ", poses[0].pose.keypoints[7].position.y)
+        
+        console.log("8.x: ", poses[0].pose.keypoints[8].position.x)
+        console.log("8.y: ", poses[0].pose.keypoints[8].position.y)
+        
+        console.log("9.x: ", poses[0].pose.keypoints[9].position.x)
+        console.log("9.y: ", poses[0].pose.keypoints[9].position.y)
+        
+        console.log("10.x: ", poses[0].pose.keypoints[10].position.x)
+        console.log("10.y: ", poses[0].pose.keypoints[10].position.y)
+        
+        console.log("11.x: ", poses[0].pose.keypoints[11].position.x)
+        console.log("11.y: ", poses[0].pose.keypoints[11].position.y)
+        
+        console.log("12.x: ", poses[0].pose.keypoints[12].position.x)
+        console.log("12.y: ", poses[0].pose.keypoints[12].position.y)
+        
+        console.log("13.x: ", poses[0].pose.keypoints[13].position.x)
+        console.log("13.y: ", poses[0].pose.keypoints[13].position.y)
+        
+        console.log("14.x: ", poses[0].pose.keypoints[14].position.x)
+        console.log("14.y: ", poses[0].pose.keypoints[14].position.y)
+        
+        console.log("15.x: ", poses[0].pose.keypoints[15].position.x)
+        console.log("15.y: ", poses[0].pose.keypoints[15].position.y)
+        
+        console.log("16.x: ", poses[0].pose.keypoints[16].position.x)
+        console.log("16.y: ", poses[0].pose.keypoints[16].position.y)
+        
+        
+        console.log("Time elapsed: ", millis());
+        console.log("----------------------------");
       }
 
       function modelReady() {
@@ -36,7 +95,11 @@
 
       function draw() {
         image(video, 0,0);
+        fill(200,0,0);
+        ellipse(leftHandX, leftHandY, 25);
       }
+
+
     </script>
   </body>
 </html>
