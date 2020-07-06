@@ -56,7 +56,8 @@ try:
 
     # Main loop. Idea is to keep outputting the poses to log until
     # either Ctrl+C is pressed on the terminal or the browser window is
-    # closed
+    # closed (though terminal program will still need to be terminated
+    # in that case)
     with open(output_path, "w") as outfile:
         while (True):
             # Go through available console logs
@@ -66,10 +67,7 @@ try:
                     json_str = entry['message'].split()[-1]
                     # Decode JSON str into a dictionary
                     poses = json.loads(json.loads(json_str)) # Parse twice
-                    # TODO: Convert each dictionary entry into a CSV string and
-                    # write to file
-                    if len(poses) > 1:
-                        breakpoint()
+                    # Write to file
                     outfile.write(json.dumps(poses, indent=2))
 
             # Sleep to allow for more logs to accumulate

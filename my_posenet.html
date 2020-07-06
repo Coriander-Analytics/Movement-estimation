@@ -29,6 +29,20 @@
       }
       function gotPoses(poses) {
           if (poses.length > 0) {
+              /*
+              // JSON method of logging keypoints
+
+              // For each pose, add in a timestamp for us to use
+              for (var i = 0; i < poses.length; i++) {
+                  poses[i].timestamp = millis();
+              }
+              // ^ We could also do a jankier solution that has the timestamp
+              // appended as the last element of the poses array, to prevent
+              // having to iterate across each element
+
+              // Output the poses as a JSON string for extraction
+              console.log(JSON.stringify(poses));
+              */
 
               // Print out each of the coordinates of the first keypoint
               var keypoints = poses[0].pose.keypoints
