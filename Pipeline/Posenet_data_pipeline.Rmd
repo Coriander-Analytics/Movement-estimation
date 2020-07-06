@@ -1,0 +1,101 @@
+---
+title: "Cleaned_pose_class_data"
+author: "Coriander Analystics"
+date: "07/04/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+library("ggplot2")
+
+data <- read.csv("/Users/tashakim/Movement-estimation-1/Pose_class_data/pose_class_0_calm.csv")
+```
+
+```{r}
+# save max no. of rows, n
+n <- nrow(data)
+
+# label value column
+colnames(data) <- "value"
+#as.numeric(data$value)
+#as.String(data$value)
+
+# slice up to maximum 36*k < n, k>=0:
+k <- floor(n/36) # no. of Classes
+m <- 36*k+2
+#2+36*(floor(n/36))
+data <- dplyr::slice(data,3 : m) # row: starts at 3 / col: 2 + 36*k
+
+```
+
+```{r}
+head(data)
+View(data)
+typeof(data$value)
+```
+
+```{r}
+# extract the values behind ": "
+
+x <- data$value
+clean <- gsub(".* ", "", x)
+View(clean)
+```
+
+
+```{r}
+# Row names
+rowNames <- c(1:34, "Time Elapsed", "NA")
+View(rowNames)
+
+# Reshape data
+#time <- vector("numeric", k) # vector stores k no. of time Classes
+#for (i in 1:k) {
+#  r <- 1 + 36*(i-1)
+#  c <- 36*i
+#  time[i] <- clean[r:c] 
+#}
+spread <- vector("numeric", 36)
+coord <- vector("numeric", 36)
+spread <- cbind(spread, coord)
+
+for (i in 1:k) {
+  nr <- 1+36*(i-1)
+  nc <- 36*i
+  t <- clean[nr:nc]
+  spread <- cbind(spread, t)
+  View(spread)
+}
+
+
+# Append row names
+rownames(spread) <- rowNames
+View(spread)
+```
+
+```{r}
+# Fill in ID from posenet chart
+for (i in 1:34) {
+  spread[i,1] <- floor((i-1)/2)
+}
+# Similarly for coord's
+for (i in 1:17) {
+  spread[2*i,2] <- 'Y'
+  spread[2*i-1, 2] <- 'X'
+}
+
+# Append col names
+colNames <- c('id', 'coord',  1:k)
+colnames(spread) <- colNames
+View(spread)
+```
+
+```{r}
+# Experiment here
+data <- spread
+
+#plot(data[1, 3:24], data[35, 3:24])
+#plot(data[2, 3:24], data[35, 3:24])
+#ggplot(data[1:34, 3:24])
+
+```
