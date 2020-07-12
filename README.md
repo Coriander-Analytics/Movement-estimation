@@ -16,4 +16,4 @@ Uses Python, JavaScript, C++, Arduino & Arduino Cam, and OpenCV.
 
 07/07: Updated the p5 web editor script, runs in browser. Next goal: Algos.
 
-07/12: EDA on pose_class_data.
+07/12~: Performing EDA on pose_class_data.
