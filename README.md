@@ -4,7 +4,7 @@ Building a movement-estimation interface.
 Uses Python, JavaScript, C++, Arduino & Arduino Cam, and OpenCV.
 
 
-07/01 Next goal: use Posenet to output array of body-part coordinates.
+07/01: Use Posenet to output array of body-part coordinates.
 
 07/02: Confirmed method of logging Posenet data to a csv file, + time coordinates.
 
