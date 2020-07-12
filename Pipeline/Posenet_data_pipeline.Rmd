@@ -8,7 +8,7 @@ output: pdf_document
 ```{r setup, include=FALSE}
 library("ggplot2")
 
-data <- read.csv("/Users/tashakim/Movement-estimation-1/Pose_class_data/pose_class_0_calm.csv")
+data <- read.csv("../Pose_class_data/pose_class_0_calm.csv")
 ```
 
 ```{r}
