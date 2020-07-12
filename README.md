@@ -15,3 +15,5 @@ Uses Python, JavaScript, C++, Arduino & Arduino Cam, and OpenCV.
 07/06: Completed data pipeline using R. Plotted some movement data.
 
 07/07: Updated the p5 web editor script, runs in browser. Next goal: Algos.
+
+07/12: EDA on pose_class_data.
