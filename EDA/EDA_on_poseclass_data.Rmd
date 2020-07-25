@@ -1,0 +1,42 @@
+---
+title: "EDA_on_poseclass_data"
+author: "Tasha Kim"
+date: "7/21/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(dplyr)
+calm <- read.csv("/Users/tashakim/Movement-estimation-1/Pose_class_data/pose_class_0_calm_cleaned.csv")
+happy <- read.csv("/Users/tashakim/Movement-estimation-1/Pose_class_data/pose_class_1_happy_cleaned.csv")
+threat <- read.csv("/Users/tashakim/Movement-estimation-1/Pose_class_data/pose_class_2_threatening_cleaned.csv")
+```
+
+
+```{r}
+head(calm)
+head(happy)
+head(threat)
+```
+
+```{r}
+c <- calm[1, 4:27]
+View(t(c))
+```
+
+```{r}
+c2 <- calm[35, 4:27]
+View(t(c2))
+dat <- rbind(c, c2)
+View(dat)
+plot(plot)
+```
+
+
+```{r}
+ncol(calm[1,4:27])
+ncol(calm[35,4:27])
+p <- ggplot(data = calm, aes(x = id, y = coord)) + geom_line()
+p
+```
