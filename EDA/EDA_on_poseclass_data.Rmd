@@ -21,20 +21,58 @@ head(threat)
 ```
 
 ```{r}
-c <- calm[1, 4:27]
-View(t(c))
+th <- threat[1,  4:27]
+th <- t(th)
+
+c <- calm[1, 4:27] # nose.x
+c <- t(c)
+
+h <- happy[1, 4:27]
+h <- t(h)
+#plot(c)
+
+
+plot(th, type = "o", col = "blue", ylim = c(350,430), xlab = "Time elapsed (ms)", ylab = "Movement (pixel)")
+lines(c, type = "o", pch = 22, lty=2, col = "red")
+lines(h, type = "o", pch = 22, lty=2, col = "green")
+
+title(main = "Nose x-coord Data - from Posenet", col.main = "black", font.main = 4)
+
+legend(1,430,legend=c("threat", "calm", "happy"), col = c("blue", "red", "green"), lty = 1:2, cex = 0.8, text.font = 3, bg = 'lightblue')
+```
+```{r}
+print(th)
+c(th) + 100
+
 ```
 
+
 ```{r}
-c2 <- calm[35, 4:27]
-View(t(c2))
-dat <- rbind(c, c2)
-View(dat)
-plot(plot)
+# Measure how vigorous the movement was
+
+th_v <- th / 
+th_v <- t(th_v)
+
+c_v <- calm[1, 4:27] # nose.x
+c_v <- t(c_v)
+
+h_v <- happy[1, 4:27]
+h_v <- t(h_v)
+#plot(c)
+
+
+plot(th, type = "o", col = "blue", ylim = c(350,430), xlab = "Movement (pixel)", ylab = "Time elapsed (ms)")
+lines(c, type = "o", pch = 22, lty=2, col = "red")
+lines(h, type = "o", pch = 22, lty=2, col = "green")
+
+title(main = "Nose x-coord Data - from Posenet", col.main = "black", font.main = 4)
+
+legend(1,430,legend=c("threat", "calm", "happy"), col = c("blue", "red", "green"), lty = 1:2, cex = 0.8, text.font = 3, bg = 'lightblue')
 ```
 
 
 ```{r}
+# 3D plot
 ncol(calm[1,4:27])
 ncol(calm[35,4:27])
 p <- ggplot(data = calm, aes(x = id, y = coord)) + geom_line()
