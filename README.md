@@ -5,7 +5,7 @@
 ![GitHub stars](https://img.shields.io/github/stars/Coriander-Analytics/Movement-estimation?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/Coriander-Analytics/Movement-estimation?style=social)
 
-Our `Movement estimation interface` allows `users` to `perform classifications on human body movement data` using a standard desktop webcamera.
+Our `movement estimation interface` allows `users` to `perform classifications on human body movement data` using a standard desktop webcamera.
 
 ## Technologies used
 Python, JavaScript, C++, Arduino & Arduino Cam, and OpenCV
