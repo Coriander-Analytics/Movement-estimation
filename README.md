@@ -32,7 +32,7 @@ Thanks to the following people who have contributed to this project:
 
 ## Contact
 
-If you wish to contact us you can reach us at <jae_young_kim@brown.edu> and <jatrindo@gmail.com>.
+If you wish to contact us you can reach us at <tasha_kim@brown.edu> and <jatrindo@gmail.com>.
 
 ## License
 
