@@ -28,7 +28,7 @@ Alternatively see the GitHub documentation on [creating a pull request](https://
 Thanks to the following people who have contributed to this project:
 
 * [@tashakim](https://github.com/tashakim) 📖
-* [@jatrindo](https://github.com/jatrindo) 🐛
+* [@jatrindo](https://github.com/jatrindo) 🗨️
 
 ## Contact
 
